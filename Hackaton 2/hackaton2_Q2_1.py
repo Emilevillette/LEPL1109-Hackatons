@@ -7,7 +7,6 @@ from scipy import stats
 
 df = pd.read_csv('Data_energy_load.csv', sep=';', parse_dates=['Date'], skipinitialspace=True)
 df['Date'] = [dt['Date'].replace(hour=dt['Hour']) for i, dt in df.iterrows()]
-df.drop(['Hour'], axis=1, inplace=True)
 
 plt.figure(figsize=(11, 3))
 plt.xlim(df['Date'].min(), df['Date'].max())
@@ -17,4 +16,4 @@ plt.xlabel('Date')
 plt.ylabel('Power consumption (MW)')
 
 if __name__ == '__main__':
-  plt.show()
+    plt.show()
